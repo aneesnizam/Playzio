@@ -1,0 +1,66 @@
+.stickman.slide {
+    /* Sliding animation */
+    background: none;
+    height: 50px;
+}
+
+.stickman.slide::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: black;
+    left: 25px;
+    top: 20px;
+    /* Body */
+}
+
+.stickman.slide::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    left: 25px;
+    top: 10px;
+    /* Head */
+}
+
+/* Slide legs */
+.stickman.slide .leg-left {
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    background-color: black;
+    left: 5px;
+    top: 50px;
+}
+
+.stickman.slide .leg-right {
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    background-color: black;
+    left: 15px;
+    top: 50px;
+}
+
+/* Slide arms */
+.stickman.slide .arm-left {
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    background-color: black;
+    left: 5px;
+    top: 25px;
+}
+
+.stickman.slide .arm-right {
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    background-color: black;
+    left: 25px;
+    top: 25px;
+}

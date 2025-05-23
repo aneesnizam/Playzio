@@ -1,0 +1,67 @@
+.stickman.jump {
+    /* Jumping animation */
+    background: none;
+}
+
+.stickman.jump::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 60px;
+    background-color: black;
+    left: 25px;
+    top: 0;
+    /* Body */
+}
+
+.stickman.jump::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    left: 25px;
+    top: -10px;
+    /* Head */
+}
+
+/* Jump legs */
+.stickman.jump .leg-left,
+.stickman.jump .leg-right {
+    position: absolute;
+    width: 10px;
+    height: 40px;
+    background-color: black;
+    left: 25px;
+    top: 60px;
+    transform-origin: top;
+    transform: rotate(-30deg);
+}
+
+.stickman.jump .leg-right {
+    transform: rotate(30deg);
+}
+
+/* Jump arms */
+.stickman.jump .arm-left {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: black;
+    left: 15px;
+    top: 15px;
+    transform-origin: bottom;
+    transform: rotate(45deg);
+}
+
+.stickman.jump .arm-right {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: black;
+    left: 35px;
+    top: 15px;
+    transform-origin: bottom;
+    transform: rotate(-45deg);
+}

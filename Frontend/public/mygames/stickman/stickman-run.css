@@ -1,0 +1,93 @@
+.stickman.run {
+    /* Running animation */
+    background: none;
+}
+
+.stickman.run::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 60px;
+    background-color: black;
+    left: 25px;
+    top: 0;
+    /* Body */
+}
+
+.stickman.run::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    left: 25px;
+    top: -10px;
+    /* Head */
+}
+
+/* Legs animation */
+@keyframes runLegLeft {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(20deg); }
+}
+
+@keyframes runLegRight {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-20deg); }
+}
+
+.stickman.run .leg-left {
+    position: absolute;
+    width: 10px;
+    height: 40px;
+    background-color: black;
+    left: 25px;
+    top: 60px;
+    transform-origin: top;
+    animation: runLegLeft 0.5s infinite alternate;
+}
+
+.stickman.run .leg-right {
+    position: absolute;
+    width: 10px;
+    height: 40px;
+    background-color: black;
+    left: 25px;
+    top: 60px;
+    transform-origin: top;
+    animation: runLegRight 0.5s infinite alternate 0.25s;
+}
+
+/* Arms animation */
+@keyframes runArmLeft {
+    0%, 100% { transform: rotate(-20deg); }
+    50% { transform: rotate(20deg); }
+}
+
+@keyframes runArmRight {
+    0%, 100% { transform: rotate(20deg); }
+    50% { transform: rotate(-20deg); }
+}
+
+.stickman.run .arm-left {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: black;
+    left: 15px;
+    top: 15px;
+    transform-origin: bottom;
+    animation: runArmLeft 0.5s infinite alternate;
+}
+
+.stickman.run .arm-right {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: black;
+    left: 35px;
+    top: 15px;
+    transform-origin: bottom;
+    animation: runArmRight 0.5s infinite alternate 0.25s;
+}

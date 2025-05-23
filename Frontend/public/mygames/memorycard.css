@@ -1,0 +1,292 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-info div {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    aspect-ratio: 1 / 1;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.card-front {
+    background-color: #3498db;
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    background-image: url('card-back.png');
+    background-size: cover;
+}
+
+.shape {
+    width: 80%;
+    height: 80%;
+}
+
+.message {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.circle {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+}
+
+.square {
+    width: 80%;
+    height: 80%;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 80px solid;
+}
+
+.diamond {
+    width: 60%;
+    height: 60%;
+    transform: rotate(45deg);
+}
+
+.pentagon {
+    width: 80%;
+    height: 80%;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.hexagon {
+    width: 80%;
+    height: 80%;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.star {
+    width: 80%;
+    height: 80%;
+    clip-path: polygon(
+        50% 0%, 
+        61% 35%, 
+        98% 35%, 
+        68% 57%, 
+        79% 91%, 
+        50% 70%, 
+        21% 91%, 
+        32% 57%, 
+        2% 35%, 
+        39% 35%
+    );
+}
+
+.heart {
+    width: 80%;
+    height: 80%;
+    position: relative;
+    transform: rotate(45deg);
+}
+
+.heart:before, .heart:after {
+    content: "";
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart:before {
+    top: -40%;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: -40%;
+}
+
+.oval {
+    width: 60%;
+    height: 80%;
+    border-radius: 50%;
+}
+
+.rectangle {
+    width: 60%;
+    height: 80%;
+}
+
+.trapezoid {
+    width: 80%;
+    height: 60%;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.parallelogram {
+    width: 80%;
+    height: 60%;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.rhombus {
+    width: 60%;
+    height: 60%;
+    transform: skew(20deg);
+}
+
+.cross {
+    width: 80%;
+    height: 80%;
+    position: relative;
+}
+
+.cross:before, .cross:after {
+    content: "";
+    position: absolute;
+    background-color: inherit;
+}
+
+.cross:before {
+    width: 100%;
+    height: 30%;
+    top: 35%;
+    left: 0;
+}
+
+.cross:after {
+    width: 30%;
+    height: 100%;
+    left: 35%;
+    top: 0;
+}
+
+.moon {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    box-shadow: -15px 0 0 0;
+}
+
+.cloud {
+    width: 80%;
+    height: 60%;
+    position: relative;
+}
+
+.cloud:before, .cloud:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: inherit;
+}
+
+.cloud:before {
+    width: 50%;
+    height: 100%;
+    left: 25%;
+    top: 0;
+}
+
+.cloud:after {
+    width: 30%;
+    height: 60%;
+    left: 0;
+    top: 20%;
+}
+
+@media (max-width: 1200px) {
+    .game-board {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .game-board {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

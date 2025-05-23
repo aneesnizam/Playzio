@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Game</title>
+    <link rel="stylesheet" href="reaction.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-info">
+             <a style="text-decoration: none; color: red;position: absolute;left: 30px;top: 30px;font-size: 18px;font-weight: 600; " href="/home">Exit</a>
+            <div class="timer">Time: <span id="time">60</span>s</div>
+            <div class="score">Score: <span id="score">0</span></div>
+        </div>
+        <div class="grid" id="grid"></div>
+    </div>
+    
+    <div class="game-over" id="game-over">
+        <h1>Game Over!</h1>
+        <p>Final Score: <span id="final-score">0</span></p>
+        <button class="restart-btn" id="restart-btn">Play Again</button>
+    </div>
+
+    <script src="reaction.js"></script>
+</body>
+</html>

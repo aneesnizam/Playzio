@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake and Ladder Game</title>
+    <link rel="stylesheet" href="snakeladder.css">
+</head>
+<body>
+     <a style="text-decoration: none; color: red;position: absolute;left: 30px;top: 30px;font-size: 18px; " href="/home">Exit</a>
+    <h1>Snake and Ladder Game</h1>
+    
+    <div class="game-container">
+        <div class="board" id="board"></div>
+        
+        <div class="controls">
+            <div>
+                <label for="playerCount">Number of Players:</label>
+                <input type="number" id="playerCount" min="2" max="6" value="2">
+                <button id="startGame">Start Game</button>
+            </div>
+            
+            <div class="dice" id="dice">?</div>
+            <button id="rollDice" disabled>Roll Dice</button>
+            
+            <div class="player-info" id="playerInfo"></div>
+        </div>
+    </div>
+    
+    <div class="status" id="status">Set number of players and click Start Game</div>
+    
+    <script src="snakeladder.js"></script>
+</body>
+</html>

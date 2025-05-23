@@ -1,0 +1,72 @@
+.stickman.dead {
+    /* Death animation */
+    background: none;
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+}
+
+.stickman.dead::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 60px;
+    background-color: black;
+    left: 25px;
+    top: 0;
+    /* Body */
+}
+
+.stickman.dead::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    left: 25px;
+    top: -10px;
+    /* Head */
+}
+
+/* Dead legs */
+.stickman.dead .leg-left,
+.stickman.dead .leg-right {
+    position: absolute;
+    width: 10px;
+    height: 40px;
+    background-color: black;
+    left: 25px;
+    top: 60px;
+    transform-origin: top;
+}
+
+.stickman.dead .leg-left {
+    transform: rotate(45deg);
+}
+
+.stickman.dead .leg-right {
+    transform: rotate(-45deg);
+}
+
+/* Dead arms */
+.stickman.dead .arm-left {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: black;
+    left: 15px;
+    top: 15px;
+    transform-origin: bottom;
+    transform: rotate(90deg);
+}
+
+.stickman.dead .arm-right {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: black;
+    left: 35px;
+    top: 15px;
+    transform-origin: bottom;
+    transform: rotate(-90deg);
+}

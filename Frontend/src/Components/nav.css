@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#nav{
+position :fixed;
+top :0;
+left :0;
+width :100%;
+height :50px;
+  background: linear-gradient(180deg, #1a1a40 0%, #41126d 100%);
+box-shadow :0 2px 4px rgba(0,0,0,0.1);
+z-index :1000;
+display :flex;
+align-items :center;
+justify-content :space-between;
+padding :30px 25px;
+box-sizing :border-box;
+
+}
+#nav div.left{
+display: flex;
+align-items: center;
+text-align:center ;
+}
+#nav div.left a{
+width: 40px;
+height: 40px;
+display :flex;
+align-items :center;
+margin-right: 30px;
+
+
+}
+#nav div.left a img{
+width: 100%;
+display: block;
+}
+#nav div.left .searchbox{
+display: flex;
+height: 35px;
+justify-content: center;
+cursor: pointer;
+padding: 10px 10px;
+background: rgb(255, 255, 255);
+border-radius: 30px;
+align-items: center;
+
+}
+#nav div.left .searchbox:hover input{
+    width: 300px;
+}
+#nav div.left .searchbox input{
+width: 0;
+outline: none;
+border: none;
+background: transparent;
+font-weight: 500;
+transition: 0.8s;
+}
+#nav div.left .searchbox a{
+color: #1daf;
+font-size: 18px;
+margin: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 30px;
+height: 30px;
+}
+#nav div.right{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+#nav div.right a{
+
+}
+#nav div.right a span{
+width: 40px;
+height: 40px;
+display :flex;
+align-items: center;
+justify-content: center;
+background-color: aliceblue;
+border-radius: 50%;
+padding: 0px;
+margin-left: 30px;
+overflow: hidden;
+}
+#nav div.right a span img{
+width: 100%;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+div.middle{
+position: fixed;
+left: 45%;
+}
+div.middle h3{
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 30px;
+    
+  text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #1a1a40;
+}

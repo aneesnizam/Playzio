@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>2D Racing Game</title>
+  <link rel="stylesheet" href="race.css" />
+</head>
+<body>
+  <div id="scoreBoard">
+     <a style="text-decoration: none; color: rgba(255, 0, 0, 0.74);position: absolute;left: 30px;top: 30px;font-size: 18px; " href="/home">Exit</a>
+    Score: <span id="score">0</span> |
+    High Score: <span id="highScore">0</span>
+  </div>
+
+  <div id="controls">
+    <div id="difficulty">
+      Difficulty:
+      <label><input type="radio" name="level" value="easy" checked /> Easy</label>
+      <label><input type="radio" name="level" value="medium" /> Medium</label>
+      <label><input type="radio" name="level" value="hard" /> Hard</label>
+    </div>
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn">Pause</button>
+  </div>
+
+  <div id="gameArea"></div>
+
+  <script src="race.js"></script>
+</body>
+</html>

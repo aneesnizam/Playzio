@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="memorycard.css">
+</head>
+<body>
+    <h1>Memory Card Game</h1>
+    <a style="text-decoration: none; color: red;position: absolute;left: 30px;top: 30px;font-size: 18px; " href="/home">Exit</a>
+    <div class="controls">
+        
+        <button id="easy">Easy (16 cards)</button>
+        <button id="medium">Medium (32 cards)</button>
+        <button id="hard">Hard (64 cards)</button>
+    </div>
+    
+    <div class="game-info">
+        <div>Pairs Found: <span id="pairs-found">0</span></div>
+        <div>Time Left: <span id="time-left">0</span>s</div>
+        <div>Score: <span id="score">0</span></div>
+    </div>
+    
+    <div class="message" id="message"></div>
+    
+    <div class="game-board" id="game-board"></div>
+    
+    <script src="memorycard.js"></script>
+</body>
+</html>

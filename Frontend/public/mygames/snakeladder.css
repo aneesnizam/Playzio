@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.game-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.board {
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+    border: 2px solid #333;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.cell {
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.cell-number {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 10px;
+    color: #666;
+}
+
+.player {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 1px;
+    z-index: 10;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+}
+
+.dice {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.player-info {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+}
+
+.current-player {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.snake {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.ladder {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.snake-path {
+    stroke: red;
+    stroke-width: 3;
+    fill: none;
+}
+
+.ladder-path {
+    stroke: green;
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 5, 3;
+}
+
+.ladder-rung {
+    stroke: green;
+    stroke-width: 2;
+}
+
+.status {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    width: 500px;
+    text-align: center;
+}
