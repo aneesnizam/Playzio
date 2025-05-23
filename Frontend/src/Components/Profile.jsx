@@ -27,7 +27,7 @@ export default function ProfilePanel({
         const token =
           localStorage.getItem("token") || sessionStorage.getItem("token");
         const res = await fetch(
-          `http://localhost:5000/api/user/profile?username=${username}`,
+          `https://playzio-1.onrender.com/api/user/profile?username=${username}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -67,7 +67,7 @@ export default function ProfilePanel({
     try {
       const token =
         localStorage.getItem("token") || sessionStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/user/update", {
+      const res = await fetch("https://playzio-1.onrender.com/api/user/update", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

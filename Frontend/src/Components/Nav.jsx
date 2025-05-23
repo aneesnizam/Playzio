@@ -3,19 +3,18 @@ import "./nav.css";
 import { FaSearch, FaStar } from 'react-icons/fa';
 import Logo from "../assets/Playzio.png";
 import ProfilePanel from './Profile';
-import Dp from "../assets/dp.jpg"; 
+import Dp from "../assets/dp.jpg";
 
 export default function Nav() {
   const [showProfile, setShowProfile] = useState(false);
   const [photo, setPhoto] = useState(Dp);
 
   useEffect(() => {
-    // Load profile photo when component mounts
     const loadProfilePhoto = async () => {
-      const name = localStorage.getItem('name') || sessionStorage.getItem('name');
-      if (name) {
+      const username = localStorage.getItem('username') || sessionStorage.getItem('username');
+      if (username) {
         try {
-          const res = await fetch(`http://localhost:5000/api/user/profile?name=${name}`, {
+          const res = await fetch(`https://playzio-1.onrender.com/api/user/profile?username=${username}`, {
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('token') || sessionStorage.getItem('token')}`
             }
@@ -31,6 +30,7 @@ export default function Nav() {
         }
       }
     };
+
     loadProfilePhoto();
   }, []);
 
@@ -40,6 +40,23 @@ export default function Nav() {
 
   const handleCloseProfile = () => {
     setShowProfile(false);
+
+    // Reload profile photo after closing profile panel
+    const username = localStorage.getItem('username') || sessionStorage.getItem('username');
+    if (username) {
+      fetch(`https://playzio-1.onrender.com/api/user/profile?username=${username}`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token') || sessionStorage.getItem('token')}`
+        }
+      })
+        .then(res => (res.ok ? res.json() : null))
+        .then(data => {
+          if (data?.photo_url) {
+            setPhoto(data.photo_url);
+          }
+        })
+        .catch(err => console.error("Failed to reload profile photo:", err));
+    }
   };
 
   const handlePhotoUpdate = (newPhoto) => {
@@ -50,11 +67,15 @@ export default function Nav() {
     <>
       <section id="nav">
         <div className="left">
-          <a href=""><img src={Logo} alt="" /></a>
+          <a href="/">
+            <img src={Logo} alt="Playzio Logo" />
+          </a>
           {/* {!showProfile && (
             <div className="searchbox">
-              <input type="text" placeholder='search...' />
-              <a href=""><FaSearch /></a>
+              <input type="text" placeholder="search..." />
+              <a href="#">
+                <FaSearch />
+              </a>
             </div>
           )} */}
         </div>
@@ -65,14 +86,13 @@ export default function Nav() {
 
         {!showProfile && (
           <div className="right">
-            <a href=""><FaStar color="gold" size={24} /></a>
+            <a href="#">
+              <FaStar color="gold" size={24} />
+            </a>
             <a href="#" onClick={handleOpenProfile}>
               <span>
                 {photo ? (
-                  <img
-                    src={photo}
-                    alt="User"
-                  />
+                  <img src={photo} alt="User" />
                 ) : (
                   <div className="default-avatar" />
                 )}
@@ -83,10 +103,10 @@ export default function Nav() {
       </section>
 
       {showProfile && (
-        <ProfilePanel 
-          onClose={handleCloseProfile} 
-          photo={photo} 
-          setPhoto={handlePhotoUpdate} 
+        <ProfilePanel
+          onClose={handleCloseProfile}
+          photo={photo}
+          setPhoto={handlePhotoUpdate}
         />
       )}
     </>

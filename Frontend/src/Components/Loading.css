@@ -125,7 +125,7 @@ html {
   overflow: hidden;
   border-right: 2px solid white;
   width: 0;
-  animation: typing 1s steps(7, end) forwards, blink 0.75s step-end infinite;
+  animation: typing 2s steps(7, end) forwards, blink 0.75s step-end infinite;
   margin-top: 100px;
   position: fixed;
   text-align: center;
