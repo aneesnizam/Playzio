@@ -98,6 +98,11 @@ npm start
 
 ---
 
+## API Usage
+This project is connected to a hosted backend API for seamless functionality in production. By default, all API requests point to the deployed backend URL. However, for local development or testing purposes, you can switch to a locally hosted API. To do this, update the API base URL in the configuration file or environment variable (depending on the setup) to your local server address (e.g., http://localhost:5000). Make sure your local backend is running before making requests.
+
+---
+
 ## License
 
 This project is for personal and educational use.
