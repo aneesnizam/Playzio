@@ -45,6 +45,7 @@ Playzio is a web-based mini games platform featuring a collection of fun and eng
 ## Project Structure
 
 /frontend # React application for main UI and navigation
+
 /backend # Python backend for API and server logic
 
 ---
